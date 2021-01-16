@@ -1,0 +1,165 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <h1 class="text-info">OPEN WEATHER</h1>
+</nav>
+
+<!--=====current weather forecast started-->
+
+<section>
+    <div class="container p-5">
+        <h2 class="text-center pb-5 text-info">Current weather and forecasts in your city</h2>
+
+
+        <form>
+            <div class="form-group">
+                <input type="text"  [(ngModel)]="city" name="city" placeholder="Enter City Name">
+
+                <button (click)="get()" class="btn btn-primary">Search Here</button>
+            </div>
+
+        </form>
+
+        <div class="row p-5">
+            <div class="col-md-4 ">
+                <h4>Weather in "{{weathers.city.name}}"</h4>
+                <h5>TEMP :: {{(weathers.list[0].main.temp-273.15).toFixed(2)}}c</h5>
+                <p>{{weathers.list[0].weather[0].description}}</p>
+                <p>{{weathers.list[0].dt_txt}}</p>
+
+                <table class="table table-striped" >
+                    <tbody>
+                        <tr>
+                            <td>Wind</td>
+                            <td>{{weathers.list[0].weather[0].main}}, {{weathers.list[0].wind.speed}}m/s</td>
+                        </tr>
+                        <tr>
+                            <td>Cloudiness</td>
+                            <td>{{weathers.list[0].weather[0].description}}</td>
+                        </tr>
+                        <tr>
+                            <td>Pressure</td>
+                            <td>{{weathers.list[0].main.pressure}}</td>
+                        </tr>
+                        <tr>
+                            <td>Humidity</td>
+                            <td>{{weathers.list[0].main.humidity}}%</td>
+                        </tr>
+                        <tr>
+                            <td>Sunrise</td>
+                            <td>{{sunrise}}</td>
+                        </tr>
+                        <tr>
+                            <td>Sunset</td>
+                            <td>{{sunset}}</td>
+                        </tr>
+                        <tr>
+                            <td>Geo-Coords</td>
+                            <td>[{{(weathers.city.coord.lat).toFixed(2)}}, {{(weathers.city.coord.lon).toFixed(2)}}]</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="endpara pt-5">The weather forecast is displayed in accordance with your local time. Please pay attention to it when
+                    you will watch the weather in another time zone.</p>
+            </div>
+            <div class="col-md-8">
+                <div>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Main</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Daily</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Hourly</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Chart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" >Map</a>
+                        </li>
+                    </ul>
+                </div>
+                <h4 class="headingpad">Map weather and forecasts in {{weathers.city.name}}</h4>
+                <div class="mapdiv">
+                    <agm-map [latitude]="lat" [longitude]="lng">
+                        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                    </agm-map>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-----====current weather forecast ended ===-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div>
+    <h1>CITY :: {{weathers.city.name}}</h1>
+    <h2>latitude :: {{weathers.city.coord.lat}} Longitude :: {{weathers.city.coord.lon}}</h2>
+    <h2>POPULATION IN NUM :: {{weathers.city.population}}</h2>
+    <h2>TEMP :: {{weathers.list[0].main.temp-273.15}}</h2>
+</div>
+
+<form>
+    <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="city" name="city" placeholder="enter city name">
+    </div>
+
+    <button (click)="get()" class="btn btn-primary">GET</button>
+</form> -->

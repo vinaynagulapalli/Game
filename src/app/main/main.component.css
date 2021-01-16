@@ -1,0 +1,38 @@
+h1{
+    margin: auto;    
+}
+
+.row {
+    box-shadow: 3px 3px 15px #777;
+} 
+
+h2{
+    text-transform: uppercase;
+}
+
+.headingpad {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+input{
+    height: 35px;
+}
+
+agm-map{
+    height: 575px;
+    
+}
+
+.endpara{
+    font-size: small;
+}
+
+.mapdiv{
+    box-shadow: 3px 3px 15px #777;
+}
+
+table ,td{
+    border:2px solid  #4bc2d4 ;
+    
+}
